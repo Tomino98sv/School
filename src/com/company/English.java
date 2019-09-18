@@ -1,5 +1,7 @@
 package com.company;
 
+/*Tomas Pavlik*/
+
 public class English extends Subject {
 
     public String translate(String animal){

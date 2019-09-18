@@ -1,4 +1,5 @@
 package com.company;
+/*Tomas Pavlik*/
 
 public class SlovakLang extends Subject{
 

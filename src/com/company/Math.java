@@ -1,4 +1,5 @@
 package com.company;
+/*Tomas Pavlik*/
 
 public class Math extends Subject {
 
