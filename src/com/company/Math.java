@@ -24,4 +24,20 @@ public class Math extends Subject {
 
         return newNum*negation;
     }
+
+    public boolean isPrimeNumber(int number){
+        int delitel = 1;
+        int count = 1;
+        if (number<=1){
+            return false;
+        }else {
+            while(delitel!=number){
+                if (number%delitel == 0){
+                    count++;
+                }
+                delitel++;
+            }
+            return count == 2;
+        }
+    }
 }
