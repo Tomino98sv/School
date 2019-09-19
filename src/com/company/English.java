@@ -47,7 +47,6 @@ public class English extends Subject {
     public String cryptingWord(String  word){
         String temp = "";
         for (int a=0;a<word.length();a++){
-            System.out.println(" current char "+word.charAt(a));
             temp += cryptingChar(word.charAt(a));
         }
         return temp;
@@ -55,20 +54,13 @@ public class English extends Subject {
 
 
     public char cryptingChar(char input){
-        System.out.println("number "+(byte)input);
         byte firstHalf = (byte) (240&input);
         byte secondHalf = (byte) (15&input);
-        System.out.println("fistHalf: "+firstHalf+"secondHalf: "+secondHalf);
-        secondHalf = (byte) (secondHalf<<4);
         secondHalf = (byte) (~secondHalf);
-        secondHalf = (byte) (secondHalf>>4);
         secondHalf = (byte) (secondHalf&15);
-
-        System.out.println("SecondHalf RESULT: "+secondHalf);
 
         int result = (byte) (firstHalf|secondHalf);
 
-        System.out.println("current result char "+result);
         return (char) result;
     }
 
