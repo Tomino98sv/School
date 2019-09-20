@@ -47,7 +47,7 @@ public class English extends Subject {
     public String cryptingWord(String  word){
         String temp = "";
         for (int a=0;a<word.length();a++){
-            temp += cryptingChar(word.charAt(a));
+            temp += cryptingCharSecond(word.charAt(a));
         }
         return temp;
     }
@@ -59,9 +59,30 @@ public class English extends Subject {
         secondHalf = (byte) (~secondHalf);
         secondHalf = (byte) (secondHalf&15);
 
-        int result = (byte) (firstHalf|secondHalf);
+        byte result = (byte) (firstHalf|secondHalf);
 
         return (char) result;
+    }
+
+    public char cryptingCharSecond(char input){
+        byte firstHalf = (byte) (240&input);
+        byte secondHalf = (byte) (15&input);
+
+        firstHalf = (byte) (firstHalf>>4);
+        secondHalf = (byte) (secondHalf<<4);
+
+        byte result = (byte) (firstHalf|secondHalf);
+        System.out.println(result);
+
+        return (char) result;
+    }
+
+    public char cryptingCharThird(char input){
+        //01 01 10 10 = 90 = 'Z'
+        //01 10 01 01 = 101 = 'e'
+
+        byte result = (byte)('a');
+        return  (char) result;
     }
 
     //prijme char a zmeni posledneho jeho bytove cisla (01101010) = (01100101) a vrati vysledny znak

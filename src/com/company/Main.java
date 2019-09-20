@@ -24,7 +24,8 @@ public class Main {
 //        System.out.println("0,52 € "+" "+other.isEuro("0,52 €"));
 //        System.out.println("0,00 € "+" "+other.isEuro("0,00 €"));
 
-        System.out.println(english.cryptingWord("Pes"));
+        System.out.println(english.cryptingWord("K"));
+        System.out.println("second code: "+english.cryptingWord("trieda"));
 
     }
 }
