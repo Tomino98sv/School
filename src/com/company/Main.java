@@ -5,11 +5,13 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         SlovakLang slovakLang = new SlovakLang();
+        Other other = new Other();
+        English english = new English();
+        Math math = new Math();
+
 //        System.out.println(slovakLang.formatText("DnES je PiaTok"));
 //        System.out.println(slovakLang.formatText("dNES je streda."));
-        English english = new English();
 //        System.out.println(english.translate(null));
-        Math math = new Math();
 //        System.out.println(math.reverse(-203));
 //        System.out.println(math.isPrimeNumber(77));
 ////        for (int a=-2;a<=999;a++){
@@ -20,13 +22,7 @@ public class Main {
 //            }
 //        }
 
-        Other other = new Other();
-//        System.out.println("0,52 € "+" "+other.isEuro("0,52 €"));
-//        System.out.println("0,00 € "+" "+other.isEuro("0,00 €"));
-
-        System.out.println(english.cryptingWord("K"));
-        System.out.println("second code: "+english.cryptingWord("trieda"));
-
+        System.out.println(english.cryptingCharThird('j'));
     }
 }
 

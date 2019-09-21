@@ -81,11 +81,43 @@ public class English extends Subject {
         //01 01 10 10 = 90 = 'Z'
         //01 10 01 01 = 101 = 'e'
 
-        byte result = (byte)('a');
-        return  (char) result;
+        //01 11 01 10 = 118 = 'v'
+        //01 11 10 01 = 121 = 'y'
+
+        //01 10 10 10 = 106 = 'j'
+        //01 01 01 01 = 85 = 'U'
+
+        int[] binarCod = convertToBinary(input);
+        for (int a=binarCod.length;a>2;a=a-2){
+            int temp = binarCod[a-1];
+            binarCod[a-1]=binarCod[a-2];
+            binarCod[a-2]=temp;
+        }
+        return  (char) convertFromBinary(binarCod);
     }
 
-    //prijme char a zmeni posledneho jeho bytove cisla (01101010) = (01100101) a vrati vysledny znak
-    //240 = 1111 0000
-    //15 = 0000 1111
+    private int[] convertToBinary(int no) {
+        int i = 0, temp[] = new int[7];
+        int binary[];
+        while (no > 0) {
+            temp[i++] = no % 2;
+            no /= 2;
+        }
+        binary = new int[i];
+        int k = 0;
+        for (int j = i - 1; j >= 0; j--) {
+            binary[k++] = temp[j];
+        }
+        return binary;
+    }
+
+    private int convertFromBinary(int[] binary){
+        int number=0;
+        double index=0;
+        for (int a=binary.length;a>0;a--){
+            number+=Integer.valueOf(binary[a-1])* java.lang.Math.pow(2.0,index);
+            index++;
+        }
+        return number;
+    }
 }
