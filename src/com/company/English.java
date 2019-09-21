@@ -87,7 +87,7 @@ public class English extends Subject {
         //01 10 10 10 = 106 = 'j'
         //01 01 01 01 = 85 = 'U'
 
-        int[] binarCod = convertToBinary(input);
+        int[] binarCod = convertToBinary(input,8);
         for (int a=binarCod.length;a>2;a=a-2){
             int temp = binarCod[a-1];
             binarCod[a-1]=binarCod[a-2];
@@ -96,20 +96,17 @@ public class English extends Subject {
         return  (char) convertFromBinary(binarCod);
     }
 
-    private int[] convertToBinary(int no) {
-        int i = 0, temp[] = new int[7];
-        int binary[];
-        while (no > 0) {
-            temp[i++] = no % 2;
-            no /= 2;
+    private int[] convertToBinary(int number,int bits) {
+        int[] binaryArray = new int[bits];
+        int sizeCap = (int)java.lang.Math.pow(2.0,bits-1);
+        for (int a=0;a<binaryArray.length;a++){
+            binaryArray[a] = number/sizeCap;
+            number=number-((number/sizeCap)*sizeCap);
+            sizeCap/=2;
         }
-        binary = new int[i];
-        int k = 0;
-        for (int j = i - 1; j >= 0; j--) {
-            binary[k++] = temp[j];
-        }
-        return binary;
+        return binaryArray;
     }
+
 
     private int convertFromBinary(int[] binary){
         int number=0;

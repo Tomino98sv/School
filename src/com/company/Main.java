@@ -22,7 +22,7 @@ public class Main {
 //            }
 //        }
 
-        System.out.println(english.cryptingCharThird('j'));
+        System.out.println(english.cryptingCharThird('Z'));
     }
 }
 
