@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="remove from list"
+        android:id="@+id/removeOpt"
+        />
+    <item
+        android:title="add to favorite"
+        android:id="@+id/addFavOpt"
+        />
+    <item
+        android:title="about"
+        android:id="@+id/aboutOpt"
+        />
+</menu>

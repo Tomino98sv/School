@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Menucko</string>
+    <string name="settings">settings</string>
+    <string name="about">about</string>
+</resources>
